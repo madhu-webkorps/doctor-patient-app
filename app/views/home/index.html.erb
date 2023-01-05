@@ -1,0 +1,15 @@
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-text-white" style = "font-size: 24px;">HOME</a>
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-text-white"style = "font-size: 24px;">BAND</a>
+    <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-text-white" style = "font-size: 24px;">TOUR</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-text-white" style = "font-size: 24px;">CONTACT</a>
+     <% if user_signed_in? %>
+      <% @user = current_user%>
+      <%= link_to "Log Out", destroy_user_session_path , method: :delete, class: "nav-item m-3 text-white text-decoration-none btn btn-danger"%>
+    <% else %>
+      <%= link_to "Sign Up", new_user_registration_path, class: " w3-padding-large w3-hover-red w3-hide-small w3-right w3-button w3-blue", style: "margin-top:12px; margin-right:15px;"%> 
+      <%= link_to "Log In ", new_user_session_path, class: " w3-padding-large w3-hover-red w3-hide-small w3-right w3-button w3-blue", style: "margin-top:12px; margin-right:15px;"%>    
+    <% end %>
+    </div>
+</div>

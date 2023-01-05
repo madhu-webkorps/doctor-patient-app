@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: "home#index"
+  get '/admin', to: 'admin#index'
+  
+  # get '/admin/new', to: 'admin#new'
+  get '/doctor', to: 'doctors#index'
+  post '/admin', to: 'admin#create'
+  resources :admin
+  resources :users
+  post '/user', to: 'user#create'
 end
